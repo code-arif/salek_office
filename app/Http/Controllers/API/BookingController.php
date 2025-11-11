@@ -11,7 +11,7 @@ use App\Http\Requests\StoreTeacherRequest;
 class BookingController extends Controller
 {
     public $bookingServiceObj;
-    
+
     public function __construct()
     {
         $this->bookingServiceObj = new BookingService();
@@ -50,7 +50,7 @@ class BookingController extends Controller
             'booked_date' => Carbon::parse($request->input('booking_date'))->startOfDay(),
             'time'        => $request->input('time_range'),
         ];
-        
+
         return $this->bookingServiceObj->store($data);
     }
 
